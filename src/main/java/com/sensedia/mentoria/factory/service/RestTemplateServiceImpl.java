@@ -2,6 +2,7 @@ package com.sensedia.mentoria.factory.service;
 import com.sensedia.mentoria.factory.dto.Area;
 import com.sensedia.mentoria.factory.dto.GeometricShapes;
 import com.sensedia.mentoria.factory.request.CalculateAreaRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -9,7 +10,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RestTemplateServiceImpl implements PostRequestService{
     RestTemplate restTemplate = new RestTemplate();
-    String apiUrl = "http://localhost:8080/mentoria-java/example/factory";
+    @Value("${url.post.shape-area}")
+    private String apiUrl;
 
 
     @Override

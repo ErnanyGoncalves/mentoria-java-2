@@ -1,12 +1,14 @@
 package com.sensedia.mentoria.factory.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
+import lombok.Value;
 
 
+@Value
 public class Area {
-    @Getter
     @JsonProperty("area")
     private double area;
 
